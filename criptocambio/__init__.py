@@ -14,5 +14,5 @@ MONEDAS = ("EUR - Euro",
            "BTC - Bitcoin",
            "BCH - "Bitcoin Cash",
            "LINK - "Chainlink",
-           "ATOM - "Cosmos"
-           "USDT - Tether",)
+           "ATOM - "Cosmos",
+           "USDT - Tether")
