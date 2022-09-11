@@ -1,5 +1,9 @@
-from criptocambio import app #Esto es Flask
-from modelo import CriptoModel
+from flask import render_template  # Esto es para que Flask lea html
+
+from criptocambio import app
+from criptocambio.modelo import ListaMovimientos  # Esto es la aplicación Flask
+from criptocambio.modelo import * 
+
 
 class CriptoVista():
 
@@ -19,8 +23,15 @@ class CriptoVista():
 
 @app.route('/')
 def home():
-    return "Página de inicio"
+    movimientos = ListaMovimientos()
+    movimientos.leer_archivo()
+    # Esto hace que se vea lo que hay en el html.
+    return render_template("inicio.html", movs=movimientos.lista_movimientos)
 
+
+@app.route('/Consultar cambio')
+def tipo_cambio():
+    cambio = consultar_cambio()  #Intento llamar a la función de consultar cambio del modelo para que se pinte en la vista. 
     
 
 
