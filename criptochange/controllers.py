@@ -1,5 +1,6 @@
-from .models import CriptoModel
-from .view import CriptoView
+from tkinter import *
+from .models import *
+from .view import *
 
 
 class CriptoController:
@@ -22,3 +23,27 @@ class CriptoController:
             
             while seguir not in ("S", "N"):
                 seguir = self.vista.quieres_seguir()
+
+
+
+class CriptoControllerTk(Tk):
+    def __init__(self):
+        super().__init__()
+        self.vista = CriptoViewTk(self, self.calcular_cambio)
+        self.modelo = CriptoModel()
+
+    def run(self):
+        self.mainloop()
+
+    def calcular_cambio(self):
+        """
+        Recoge los datos de la vista
+        los pasa al modelo
+        pide el cambio al modelo
+        le pasa el resultado del cambio a la vista
+        """
+        self.modelo.moneda_origen = self.vista.moneda_origen()
+        self.modelo.moneda_destino = self.vista.moneda_destino()
+        self.modelo.consultar_cambio()
+
+        self.vista.mostrar_cambio(self.modelo.cambio)
