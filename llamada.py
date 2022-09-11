@@ -16,8 +16,8 @@ if codigo == 200:
     respuesta_json = respuesta.json()
 
     for moneda in respuesta_json:
-        if moneda["asset_id"].startswith("EUR"):
-            print(moneda["asset_id"], moneda["name"], moneda["price_usd"])
+        if moneda["asset_id"].startswith("BTC"):
+            print(moneda["asset_id"], moneda["name"])
 
 
 else:
