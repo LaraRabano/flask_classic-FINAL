@@ -1,4 +1,5 @@
 import requests
+import csv
 from . import APIKEY
 
 
@@ -16,6 +17,22 @@ class CriptoModelo:
         self.valor_euros = ""
         pass
     pass
+
+    def invertir_euros(self):
+        pass
+
+    def invertir_criptomonedas(self):
+        pass
+
+    def vender(self):
+        pass
+
+    def consultar_inversiones(self): #Esto tiene que llamar a una base de datos
+        pass
+
+
+
+
 
     def consultar_cambio(self):
 
