@@ -3,6 +3,7 @@ import csv
 from . import APIKEY
 from . import FICHERO
 
+#consultar clases del 11 y 12 de julio directamente para crear mi formulario.
 
 class APIError(Exception):
     pass
