@@ -1,0 +1,2 @@
+movimiento_id,moneda_1,cantidad_1,moneda_2,cantidad_2,tipo_cambio,total_moneda_2
+1,EUR,200,BTC,800,"1,45",1160
