@@ -1,7 +1,3 @@
-
-
-
-
 {% extends "base.html" %}
 
 {% block head_title %}
@@ -26,42 +22,45 @@ Bienvenido a Cripto Cambio
 {{ super() }}
 <table class="paper">
   <tr>
-    <th class="titulo-tabla">Fecha</th>
-    <th class="titulo-tabla">Concepto</th>
-    <th class="titulo-tabla">Tipo</th>
+    <th class="titulo-tabla">Movimiento_id</th>
+    <th class="titulo-tabla">Divisa 1</th>
     <th class="titulo-tabla numero">Cantidad</th>
+    <th class="titulo-tabla">Divisa 2</th>
+    <th class="titulo-tabla numero">Cantidad</th>
+    <th class="titulo-tabla">Tipo de cambio</th>
+    <th class="titulo-tabla numero">Euros invertidos</th>
   </tr>
   {% if movs %}
   {% for mov in movs %}
   <tr>
     <td>
-      {% if mov.fecha %}
-      {{ mov.fecha }}
+      {% if mov.movimiento_id %} #cambiar nombres por los de mi base de datos.
+      {{ mov.movimiento_id }}
       {% else %}
       ---
       {% endif %}
     </td>
-    <td>{{ mov.concepto }}</td>
     <td>
-      {% if mov.tipo == 'I' %}
-      Ingreso
+      {% if mov.moneda_1 %}
+      {{ mov.moneda_1 }}
       {% else %}
-      Gasto
+      ---
       {% endif %}
     </td>
-    <td class="numero">{{ mov.cantidad }}</td>
-  </tr>
-  {% if mov.errores %}
-  <tr>
-    <td colspan="4" class="error">
-      {% for error in mov.errores %}
-      {{ error }}.
-      {% endfor %}
+    <td class="numero">{{ mov.cantidad_1 }}</td>
+    <td>
+      {% if mov.moneda_2 %}
+      {{ mov.moneda_2 }}
+      {% else %}
+      ---
+      {% endif %}
     </td>
-  </tr>
-  {% endif %}
-  {% endfor %}
-  {% else %}
+    <td class="numero">{{ mov.cantidad_2 }}</td>
+    <td class="numero">{{ mov.tipo_cambio }}</td>
+    <td class="numero">{{ mov.total_moneda_2 }}</td>
+    {% endif %}
+    {% endfor %}
+    {% else %}
   <tr>
     <td colspan="4" class="lista-vacia">No hay movimientos que mostrar</td>
   </tr>

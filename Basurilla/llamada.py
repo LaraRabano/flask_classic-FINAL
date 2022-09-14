@@ -12,12 +12,11 @@ respuesta = requests.get(url, headers=headers)
 codigo = respuesta.status_code
 
 if codigo == 200:
-    print("Las monedas dispnibles son:")
-    respuesta_json = respuesta.json()
-
+    respuesta_json = respuesta.json()   #REVISAR POR TONY
     for moneda in respuesta_json:
-        if moneda["asset_id"].startswith("BTC"):
-            print(moneda["asset_id"], moneda["name"])
+        nombre_moneda = moneda["name"]
+        valor_moneda = moneda["asset_id"]
+        print(f"Las monedas dispnibles son: {nombre_moneda}, {valor_moneda}")
 
 
 else:
