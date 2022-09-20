@@ -20,7 +20,7 @@ Bienvenido a Cripto Cambio
 
 {% block contenido %}
 {{ super() }}
-<table class="paper">
+<table class="paper"> #REVISAR POR TONY
   <tr>
     <th class="titulo-tabla">Movimiento_id</th>
     <th class="titulo-tabla">Divisa 1</th>
@@ -34,31 +34,21 @@ Bienvenido a Cripto Cambio
   {% for mov in movs %}
   <tr>
     <td>
-      {% if mov.movimiento_id %} #cambiar nombres por los de mi base de datos.
+      #cambiar nombres por los de mi base de datos.
       {{ mov.movimiento_id }}
-      {% else %}
-      ---
-      {% endif %}
     </td>
     <td>
-      {% if mov.moneda_1 %}
       {{ mov.moneda_1 }}
-      {% else %}
-      ---
-      {% endif %}
     </td>
     <td class="numero">{{ mov.cantidad_1 }}</td>
     <td>
-      {% if mov.moneda_2 %}
       {{ mov.moneda_2 }}
-      {% else %}
-      ---
-      {% endif %}
     </td>
     <td class="numero">{{ mov.cantidad_2 }}</td>
     <td class="numero">{{ mov.tipo_cambio }}</td>
     <td class="numero">{{ mov.total_moneda_2 }}</td>
     {% endif %}
+
     {% endfor %}
     {% else %}
   <tr>
@@ -66,4 +56,5 @@ Bienvenido a Cripto Cambio
   </tr>
   {% endif %}
 </table>
+{{suma}}
 {% endblock %}

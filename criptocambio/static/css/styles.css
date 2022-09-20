@@ -15,6 +15,10 @@ nav {
     padding-left: 25px;
 }
 
+nav.main-menu a {
+    color: rgba(124, 28, 107);
+}
+
 main {
     max-width: 800px;
     margin: auto;
@@ -38,6 +42,19 @@ table.paper {
     text-align: right;
 }
 
+.mini-boton {
+    border: solid 1px rgba(39, 108, 199, 0.51);
+    background-color: rgba(220, 81, 194, 0.133);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+table.paper .error {
+    font-size: small;
+    padding-left: 40px;
+    color: rgba(39, 108, 199, 0.51);
+}
+
 .pie-de-pagina {
     margin-top: 40px;
     padding: 20px;
@@ -58,12 +75,41 @@ table.paper {
     margin-top: .75rem;
 }
 
-.campo-formulario .radio-label {
+.campo-formulario .radio-label,
+.campo-formulario>input[type="radio"]~label {
     display: inline-block;
     margin-right: 2rem;
     margin-bottom: .5rem;
 }
 
+
 .campo-formulario input:not([type="radio"]) {
     width: 40%;
+}
+
+.lista-errores {
+    background-color: rgba(200, 0, 0, .25);
+    color: darkred;
+    border: solid 2px darkred;
+    padding: 2rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.icono-error {
+    margin-right: 1rem;
+    font-size: 32px;
+}
+
+.exito-flash {
+    background-color: rgba(0, 200, 0, .25);
+    color: darkgreen;
+    border: solid 2px darkgreen;
+    padding: 2rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
 }
